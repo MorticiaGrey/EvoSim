@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Organisms/Organism.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cells/OutputCells/DebugCell.tscn" type="PackedScene" id=2]
+
+[node name="Organism" instance=ExtResource( 1 )]
+rootCell = ExtResource( 2 )
