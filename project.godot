@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Organism",
+"language": "GDScript",
+"path": "res://Organisms/Organism.gd"
+} ]
+_global_script_class_icons={
+"Organism": ""
+}
+
 [application]
 
 config/name="EvoSim"
+run/main_scene="res://Environments/Environment.tscn"
 config/icon="res://icon.png"
 
 [autoload]
