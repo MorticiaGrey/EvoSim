@@ -24,7 +24,16 @@ var gridSize: int = 10
 
 
 func _ready():
+	var inputCell = load("res://Cells/InputCells/DebugInputCell.tscn")
 	addCell(rootCell)
+	addCell(inputCell)
+	
+	#inputCells[0].connect("trigger", outputCells[0], "_triggered")
+	for i in inputCells:
+		for j in i.outputCells:
+			for k in outputCells:
+				if k.cellName == j:
+					i.connect("trigger", k, "_triggered")
 
 
 # workaround because constructor wasn't working in environment
@@ -56,6 +65,7 @@ func addCell(newCell: PackedScene) -> void:
 	add_child(cell)
 
 
+# add other arrays to this
 func removeCell(x: int, y: int) -> void:
 	for cell in cells:
 		if cell.x == x && cell.y == y:
